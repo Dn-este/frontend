@@ -1,0 +1,114 @@
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Azul claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ff4500; /* Naranja brillante */
+    border-bottom: 3px solid #ffa500; /* Amarillo */
+}
+
+.navbar-brand {
+    color: #ffffff; /* Blanco */
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff; /* Blanco */
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #ffd700; /* Dorado */
+}
+
+/* Sección Home */
+#home {
+    background-color: #00ced1; /* Turquesa */
+    color: #ffffff; /* Blanco */
+    padding: 50px 0;
+}
+
+#home h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#home p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Sección Historia */
+#historia {
+    background-color: #ff69b4; /* Rosa brillante */
+    color: #ffffff; /* Blanco */
+    padding: 50px 0;
+}
+
+#historia h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#historia p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Sección Partners */
+#partners {
+    background-color: #32cd32; /* Verde brillante */
+    color: #ffffff; /* Blanco */
+    padding: 50px 0;
+}
+
+#partners h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#partners p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Sección Proximamente */
+#proximamente {
+    background-color: #1e90ff; /* Azul brillante */
+    color: #ffffff; /* Blanco */
+    padding: 50px 0;
+}
+
+#proximamente h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#proximamente p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Botón de cambio de tema */
+.dropdown-toggle {
+    background-color: #ff4500; /* Naranja brillante */
+    color: #ffffff; /* Blanco */
+}
+
+.dropdown-menu {
+    background-color: #ffa500; /* Amarillo */
+}
+
+.dropdown-item {
+    color: #000000; /* Negro */
+}
+
+.dropdown-item:hover {
+    background-color: #ffd700; /* Dorado */
+    color: #ffffff; /* Blanco */
+}
