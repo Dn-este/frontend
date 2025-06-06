@@ -115,7 +115,7 @@ body {
 
 /* Botón de cambio de tema */
 .dropdown-toggle {
-    background-color: #ff4500; /* Naranja brillante */
+    background-color: gray; /* Naranja brillante */
     color: #ffffff; /* Blanco */
 }
 
