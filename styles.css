@@ -1,134 +1,377 @@
-/* Variables para el tema claro */
+/* Variables CSS para temas */
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --navbar-bg-color: #f8f9fa;
-  --dropdown-bg-color: #ffffff;
-  --dropdown-border-color: #cccccc;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    
+    /* Colores personalizados para tema claro */
+    --hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --section-bg: #f8f9fa;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: rgba(0, 0, 0, 0.125);
 }
 
-/* Variables para el tema oscuro */
 [data-bs-theme="dark"] {
-  --background-color: #121212;
-  --text-color: #e0e0e0;
-  --navbar-bg-color: #343a40;
-  --dropdown-bg-color: #1f1f1f;
-  --dropdown-border-color: #444444;
+    /* Colores personalizados para tema oscuro */
+    --hero-bg: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --section-bg: #1a1a1a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+    --border-color: rgba(255, 255, 255, 0.125);
 }
 
-/* Estilo general para el cuerpo */
+[data-bs-theme="light"] {
+    /* Colores personalizados para tema claro */
+    --hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --section-bg: #ffffff;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: rgba(0, 0, 0, 0.125);
+}
+
+/* Estilos base que se adaptan al tema */
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    background-color: var(--section-bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navbar */
-.navbar {
-    background-color: var(--navbar-bg-color);
-    border-bottom: 3px solid #ffa500; /* Amarillo */
+/* Hero section */
+.hero-section {
+    background: var(--hero-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-.navbar-brand {
-    color: #ffffff; /* Blanco */
-    font-weight: bold;
+/* Secciones con fondo adaptativo */
+.section-historia,
+.section-partners,
+.section-proximamente {
+    background: var(--hero-bg);
 }
 
-.nav-link {
-    color: #ffffff; /* Blanco */
-    font-weight: bold;
+/* Cards que se adaptan al tema */
+.feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #ffd700; /* Dorado */
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección Home */
-#home {
-    background-color: #00ced1; /* Turquesa */
-    color: #ffffff; /* Blanco */
-    padding: 50px 0;
+/* Botón del selector de temas */
+.theme-switcher {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1050;
 }
 
-#home h1 {
-    text-align: center;
-    font-size: 2.5rem;
+.theme-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-#home p {
-    text-align: center;
-    font-size: 1.2rem;
+.theme-btn:hover {
+    background: var(--bs-primary);
+    color: white;
+    transform: scale(1.1);
 }
 
-/* Sección Historia */
-#historia {
-    background-color: #ff69b4; /* Rosa brillante */
-    color: #ffffff; /* Blanco */
-    padding: 50px 0;
-}
-
-#historia h1 {
-    text-align: center;
-    font-size: 2.5rem;
-}
-
-#historia p {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-/* Sección Partners */
-#partners {
-    background-color: #32cd32; /* Verde brillante */
-    color: #ffffff; /* Blanco */
-    padding: 50px 0;
-}
-
-#partners h1 {
-    text-align: center;
-    font-size: 2.5rem;
-}
-
-#partners p {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-/* Sección Proximamente */
-#proximamente {
-    background-color: #1e90ff; /* Azul brillante */
-    color: #ffffff; /* Blanco */
-    padding: 50px 0;
-}
-
-#proximamente h1 {
-    text-align: center;
-    font-size: 2.5rem;
-}
-
-#proximamente p {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-/* Botón de cambio de tema */
-.dropdown-toggle {
-    background-color: gray; /* Naranja brillante */
-    color: #ffffff; /* Blanco */
-}
-
+/* Dropdown del selector de temas */
 .dropdown-menu {
-    background-color: var(--dropdown-bg-color);
-    border: 1px solid var(--dropdown-border-color);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
 }
 
 .dropdown-item {
-    color: var(--text-color);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
 
 .dropdown-item:hover {
-    background-color: var(--dropdown-border-color);
-    color: #ffffff; /* Blanco */
+    background: var(--bs-primary);
+    color: white;
+}
+
+.dropdown-item.active {
+    background: var(--bs-primary);
+    color: white;
+}
+
+/* Navbar adaptativo */
+.navbar {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--text-primary) !important;
+}
+
+.nav-link:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* Footer adaptativo */
+.footer {
+    background: var(--section-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Botones personalizados */
+.btn-primary-custom {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Iconos con gradientes */
+.gradient-lightning {
+    background: linear-gradient(45deg, #ffeaa7, #fdcb6e);
+}
+
+.gradient-security {
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+}
+
+.gradient-growth {
+    background: linear-gradient(45deg, #00b894, #00cec9);
+}
+
+.gradient-passion {
+    background: linear-gradient(45deg, #fd79a8, #e84393);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Timeline adaptativa */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    width: 45%;
+}
+
+.timeline-year {
+    background: var(--bs-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 0 2rem;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Partner logos */
+.partner-logo {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Newsletter form */
+.newsletter-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-input {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.newsletter-input:focus {
+    background: var(--card-bg);
+    border-color: var(--bs-primary);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-newsletter {
+    background: var(--bs-primary);
+    border: 1px solid var(--bs-primary);
+    color: white;
+}
+
+.btn-newsletter:hover {
+    background: var(--bs-primary);
+    opacity: 0.9;
+    transform: translateX(2px);
+}
+
+/* Progress bars modernas */
+.progress-modern {
+    height: 8px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-modern {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+/* Roadmap icons */
+.roadmap-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.roadmap-q1 { background: linear-gradient(45deg, #ffeaa7, #fdcb6e); }
+.roadmap-q2 { background: linear-gradient(45deg, #74b9ff, #0984e3); }
+.roadmap-q3 { background: linear-gradient(45deg, #00b894, #00cec9); }
+.roadmap-q4 { background: linear-gradient(45deg, #fd79a8, #e84393); }
+
+/* Social links */
+.social-link {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--bs-primary) !important;
+    transform: translateY(-2px);
+}
+
+.footer-link:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* Animaciones */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-up.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 100px);
+        margin-left: 60px;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        left: 0;
+        margin: 0;
+    }
+    
+    .theme-switcher {
+        top: 80px;
+        right: 10px;
+    }
+    
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+    }
 }
