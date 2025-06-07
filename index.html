@@ -3,119 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+    <title>InnovaCompany - Innovación y Creatividad</title>
+    <meta name="description" content="Empresa líder en soluciones innovadoras con años de experiencia y partners de confianza">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Panel colapsable</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav-dark" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#historia">Historia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#partners">Partners</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true" href="#proximamente">Proximamente</a>
-              </li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-rocket-takeoff me-2"></i>InnovaCompany
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><i class="bi bi-house me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#historia"><i class="bi bi-clock-history me-1"></i>Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners"><i class="bi bi-people me-1"></i>Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proximamente"><i class="bi bi-stars me-1"></i>Próximamente</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <div class="dropdown">
+            <button class="btn theme-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-palette"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><button class="dropdown-item" data-bs-theme-value="light"><i class="bi bi-sun me-2"></i>Claro</button></li>
+                <li><button class="dropdown-item active" data-bs-theme-value="dark"><i class="bi bi-moon me-2"></i>Oscuro</button></li>
+                <li><button class="dropdown-item" data-bs-theme-value="auto"><i class="bi bi-circle-half me-2"></i>Auto</button></li>
             </ul>
-          </div>
         </div>
-      </nav>
+    </div>
 
-      <!-- Secciones correspondientes -->
-      <section id="home" class="py-5">
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
         <div class="container">
-          <h1>Home</h1>
-          <p>Contenido de la sección Home.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold text-white mb-4 fade-in-up">
+                        Innovación que Transforma el Futuro
+                    </h1>
+                    <p class="lead text-white mb-4 fade-in-up">
+                        Somos líderes en soluciones tecnológicas innovadoras, creando experiencias únicas 
+                        que impulsan el crecimiento de tu negocio hacia nuevos horizontes.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 fade-in-up">
+                        <button class="btn btn-lg px-4 btn-primary-custom">
+                            <i class="bi bi-rocket me-2"></i>Comenzar
+                        </button>
+                        <button class="btn btn-outline-light btn-lg px-4">
+                            <i class="bi bi-play-circle me-2"></i>Ver Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="row g-3 g-md-4">
+                        <div class="col-6 col-md-6">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon mx-auto gradient-lightning">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+                                <h5 class="text-light">Velocidad</h5>
+                                <p class="text-muted">Soluciones rápidas y eficientes para tu negocio</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon mx-auto gradient-security">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <h5 class="text-light">Seguridad</h5>
+                                <p class="text-muted">Protección garantizada en todos nuestros servicios</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon mx-auto gradient-growth">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <h5 class="text-light">Crecimiento</h5>
+                                <p class="text-muted">Escalabilidad que crece contigo</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon mx-auto gradient-passion">
+                                    <i class="bi bi-heart"></i>
+                                </div>
+                                <h5 class="text-light">Pasión</h5>
+                                <p class="text-muted">Amor por lo que hacemos, dedicación total</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="historia" class="py-5">
+    <!-- Historia Section -->
+    <section id="historia" class="section-historia py-5">
         <div class="container">
-          <h1>Historia</h1>
-          <p>Contenido de la sección Historia.</p>
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-white mb-4">Nuestra Historia</h2>
+                    <p class="lead text-white">Un viaje de innovación y crecimiento constante</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-white">Los Inicios</h4>
+                        <p class="text-white mb-0">Fundamos la empresa con una visión clara: revolucionar la industria tecnológica mediante soluciones innovadoras y un enfoque centrado en el cliente.</p>
+                    </div>
+                    <div class="timeline-year">2020</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-white">Primer Éxito</h4>
+                        <p class="text-white mb-0">Lanzamos nuestro producto estrella que alcanzó más de 10,000 usuarios en su primer año, estableciendo nuestra reputación en el mercado.</p>
+                    </div>
+                    <div class="timeline-year">2021</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-white">Expansión Global</h4>
+                        <p class="text-white mb-0">Expandimos operaciones a 5 países diferentes, formando alianzas estratégicas y construyendo un equipo multicultural de expertos.</p>
+                    </div>
+                    <div class="timeline-year">2022</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-white">Reconocimiento</h4>
+                        <p class="text-white mb-0">Recibimos múltiples premios por innovación y fuimos reconocidos como "Empresa del Año" por la cámara de comercio local.</p>
+                    </div>
+                    <div class="timeline-year">2023</div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="partners" class="py-5">
+    <!-- Partners Section -->
+    <section id="partners" class="section-partners py-5">
         <div class="container">
-          <h1>Partners</h1>
-          <p>Contenido de la sección Partners.</p>
-        </div>
-      </section>
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-white mb-4">Nuestros Partners</h2>
+                    <p class="lead text-white">Colaboramos con las mejores empresas del sector</p>
+                </div>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="partner-logo">
+                        <i class="bi bi-microsoft display-4 text-white mb-3"></i>
+                        <h5 class="text-white">Microsoft</h5>
+                        <p class="text-white mb-0">Soluciones en la nube</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="partner-logo">
+                        <i class="bi bi-google display-4 text-white mb-3"></i>
+                        <h5 class="text-white">Google</h5>
+                        <p class="text-white mb-0">Analytics y publicidad</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="partner-logo">
+                        <i class="bi bi-amazon display-4 text-white mb-3"></i>
+                        <h5 class="text-white">Amazon</h5>
+                        <p class="text-white mb-0">Infraestructura AWS</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="partner-logo">
+                        <i class="bi bi-apple display-4 text-white mb-3"></i>
+                        <h5 class="text-white">Apple</h5>
+                        <p class="text-white mb-0">Desarrollo iOS</p>
+                    </div>
+                </div>
+            </div>
 
-      <section id="proximamente" class="py-5">
+            <!-- Testimonials -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center text-white mb-4">Lo que dicen nuestros clientes</h3>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-warning rounded-circle p-2 me-3 flex-shrink-0">
+                                        <i class="bi bi-person-circle text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">María González</h6>
+                                        <small class="text-muted">CEO, TechStart</small>
+                                    </div>
+                                </div>
+                                <p class="text-muted">"Increíble experiencia trabajando con este equipo. Superaron todas nuestras expectativas."</p>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-info rounded-circle p-2 me-3 flex-shrink-0">
+                                        <i class="bi bi-person-circle text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Carlos López</h6>
+                                        <small class="text-muted">CTO, InnovaCorp</small>
+                                    </div>
+                                </div>
+                                <p class="text-muted">"La calidad técnica y el soporte post-venta son excepcionales. Los recomiendo totalmente."</p>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-success rounded-circle p-2 me-3 flex-shrink-0">
+                                        <i class="bi bi-person-circle text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Ana Martínez</h6>
+                                        <small class="text-muted">Directora, Digital Plus</small>
+                                    </div>
+                                </div>
+                                <p class="text-muted">"Profesionalismo y creatividad en cada proyecto. Son nuestros partners de confianza."</p>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximamente Section -->
+    <section id="proximamente" class="section-proximamente py-5">
         <div class="container">
-          <h1>Proximamente</h1>
-          <p>Contenido de la sección Proximamente.</p>
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-white mb-4">Próximamente</h2>
+                    <p class="lead text-white">Estamos trabajando en cosas increíbles para ti</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="newsletter-form">
+                        <h4 class="text-white mb-3"><i class="bi bi-envelope-heart me-2"></i>Mantente Informado</h4>
+                        <p class="text-white mb-4">Sé el primero en conocer nuestros nuevos lanzamientos y actualizaciones</p>
+                        <form class="newsletter-form-input">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control newsletter-input" placeholder="tu@email.com" required>
+                                <button class="btn btn-newsletter" type="submit">
+                                    <i class="bi bi-send me-1"></i><span class="d-none d-sm-inline">Suscribirse</span>
+                                </button>
+                            </div>
+                        </form>
+                        <small class="text-white-50">No spam, solo contenido de valor</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h4 class="text-white mb-4"><i class="bi bi-speedometer2 me-2"></i>Progreso de Desarrollo</h4>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between text-white mb-2">
+                            <span class="fw-medium">App Mobile 2.0</span>
+                            <span class="fw-bold">85%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar progress-bar-modern" style="width: 85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between text-white mb-2">
+                            <span class="fw-medium">Dashboard Analytics</span>
+                            <span class="fw-bold">70%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar progress-bar-modern" style="width: 70%" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between text-white mb-2">
+                            <span class="fw-medium">API Integrations</span>
+                            <span class="fw-bold">90%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar progress-bar-modern" style="width: 90%" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between text-white mb-2">
+                            <span class="fw-medium">Sistema de Chat</span>
+                            <span class="fw-bold">45%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar progress-bar-modern" style="width: 45%" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h4 class="text-white text-center mb-4">Roadmap 2025</h4>
+                    <div class="row g-3">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="feature-card text-center h-100">
+                                <div class="roadmap-icon mx-auto mb-3 roadmap-q1">
+                                    <i class="bi bi-calendar-event text-white"></i>
+                                </div>
+                                <h6 class="text-light">Q1 2025</h6>
+                                <p class="text-muted small">Lanzamiento App Mobile 2.0</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="feature-card text-center h-100">
+                                <div class="roadmap-icon mx-auto mb-3 roadmap-q2">
+                                    <i class="bi bi-graph-up text-white"></i>
+                                </div>
+                                <h6 class="text-light">Q2 2025</h6>
+                                <p class="text-muted small">Analytics Dashboard</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="feature-card text-center h-100">
+                                <div class="roadmap-icon mx-auto mb-3 roadmap-q3">
+                                    <i class="bi bi-plugin text-white"></i>
+                                </div>
+                                <h6 class="text-light">Q3 2025</h6>
+                                <p class="text-muted small">Nuevas Integraciones</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="feature-card text-center h-100">
+                                <div class="roadmap-icon mx-auto mb-3 roadmap-q4">
+                                    <i class="bi bi-rocket text-white"></i>
+                                </div>
+                                <h6 class="text-light">Q4 2025</h6>
+                                <p class="text-muted small">Plataforma AI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <div class="dropdown position-absolute" style="top: 56px; right: 10px;">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-moon-stars"></i>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li>
-            <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light">
-              🌞 Claro
-            </button>
-          </li>
-          <li>
-            <button class="dropdown-item d-flex align-items-center active" type="button" data-bs-theme-value="dark">
-              🌙 Nocturno
-            </button>
-          </li>
-          <li>
-            <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
-              🌓 Auto
-            </button>
-          </li>
-        </ul>
-      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5><i class="bi bi-rocket-takeoff me-2"></i>InnovaCompany</h5>
+                    <p>Transformando ideas en realidades digitales desde 2020. Innovación, calidad y excelencia en cada proyecto.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light text-decoration-none footer-link">Inicio</a></li>
+                        <li><a href="#historia" class="text-light text-decoration-none footer-link">Nuestra Historia</a></li>
+                        <li><a href="#partners" class="text-light text-decoration-none footer-link">Socios</a></li>
+                        <li><a href="#proximamente" class="text-light text-decoration-none footer-link">Próximamente</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5>Contacto</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Santiago, Chile</p>
+                    <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@innovacompany.com</p>
+                    <p class="mb-2"><i class="bi bi-phone me-2"></i>+56 9 1234 5678</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 InnovaCompany. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-      <script>
-        const themeButtons = document.querySelectorAll('[data-bs-theme-value]');
-        const root = document.documentElement;
-    
-        themeButtons.forEach(btn => {
-          btn.addEventListener('click', () => {
-            const theme = btn.getAttribute('data-bs-theme-value');
-            root.setAttribute('data-bs-theme', theme);
-            localStorage.setItem('theme', theme);
-            updateActiveTheme(theme);
-          });
-        });
-    
-        function updateActiveTheme(theme) {
-          themeButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-bs-theme-value') === theme) {
-              btn.classList.add('active');
-            }
-          });
-        }
-    
-        // Cargar tema almacenado
-        const storedTheme = localStorage.getItem('theme') || 'auto';
-        root.setAttribute('data-bs-theme', storedTheme);
-        updateActiveTheme(storedTheme);
-      </script>
-    
-      <!-- Iconos opcionales (Bootstrap Icons) -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
