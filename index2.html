@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro OS - Tu Portal de Sistemas Operativos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Paleta de colores personalizada */
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #00acc1;
+            --accent-color: #263238;
+            --white-color: #ffffff;
+            --hover-color: #2979ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #0d47a1, #00acc1, #263238, #0d47a1);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        #principal {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Banner styles */
+        .banner-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(13, 71, 161, 0.2);
+            color: var(--white-color);
+        }
+
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            background: var(--white-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .banner-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Menu styles */
+        #menu {
+            margin-bottom: 10px;
+        }
+
+        .custom-navbar {
+            background: linear-gradient(270deg, #373738 0%,#f5f7fa 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 25px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 25px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background: var(--hover-color);
+            color: var(--white-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(41, 121, 255, 0.4);
+        }
+
+        /* Carousel styles */
+        .carousel-container {
+            background: var(--white-color);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 25px;
+            height: 25px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+            background: var(--hover-color);
+        }
+
+        /* OS Cards styles */
+        .os-card {
+            background: var(--white-color);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .os-card:hover {
+            transform: translateY(-8px) translateX(-4px);
+            box-shadow: 8px 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .os-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .os-card h5 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .os-card p {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Modal styles */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-body {
+            padding: 40px;
+            text-align: center;
+            
+        }
+
+        .modal-body img {
+            transform: scale(1.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .motivational-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer styles */
+        .footer-section {
+            background: var(--accent-color);
+            color: var(--white-color);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+
+        .footer-item a {
+            color: var(--white-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-item a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 1.8rem;
+            }
+            
+            .carousel-item img {
+                height: 250px;
+            }
+            
+            .os-card {
+                margin-bottom: 20px;
+            }
+        }
+        .modal.fade .modal-dialog {
+            transition: transform 0.4s ease-out;
+            transform: translateY(-30px);
+        }
+        .modal.show .modal-dialog {
+            transform: translateY(0);
+        }
+
+        @keyframes gradientMove {
+            0% {
+        background-position: 0% 50%;
+            }
+            50% {
+        background-position: 100% 50%;
+            }
+            100% {
+        background-position: 0% 50%;
+            }
+}
+
+        /* OS placeholder images */
+        .os-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white-color);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .ubuntu { background: linear-gradient(135deg, #E95420, #77216F); }
+        .windows { background: linear-gradient(135deg, #0078D4, #106EBE); }
+        .macos { background: linear-gradient(135deg, #007AFF, #5856D6); }
+        .fedora { background: linear-gradient(135deg, #294172, #3C6EB4); }
+        .popos { background: linear-gradient(135deg, #48B9C7, #FFA500); }
+        .zorin { background: linear-gradient(135deg, #15A6F0, #0D47A1); }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" id="principal">
+        <!-- Primera fila: Banner -->
+        <div class="row">
+            <div class="col-12">
+                <div class="banner-section">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 col-4 text-center">
+                            <div class="logo-img">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-8">
+                            <h1 class="banner-title mb-0">Centro OS - Tu Portal de Sistemas Operativos</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda fila: Menú de navegación -->
+        <div class="row">
+            <div class="col-12">
+                <div id="menu">
+                    <nav class="navbar navbar-expand-lg custom-navbar">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" target="_blank" href="https://www.linux.org/pages/download/"><i class="fab fa-linux me-2"></i>Linux Official Site</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" target="_blank" href="https://www.microsoft.com/es-es/software-download"><i class="fab fa-windows me-2"></i>Windows Official Site</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" target="_blank" href="https://support.apple.com/es-cl/102662"><i class="fab fa-apple me-2"></i>macOS Official Site</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                                    <i class="fas fa-paper-plane me-2"></i>Newsletter
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercera fila: Carrusel -->
+        <div class="row">
+            <div class="col-12">
+                <div class="carousel-container">
+                    <div id="osCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 400px; background: linear-gradient(135deg, #E95420, #77216F); border-radius: 15px;">
+                                    <div class="text-center text-white">
+                                        <i class="fab fa-linux" style="font-size: 8rem; margin-bottom: 20px;"></i>
+                                        <h2>Linux</h2>
+                                        <p class="lead">Libertad y poder en tus manos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 400px; background: linear-gradient(135deg, #0078D4, #106EBE); border-radius: 15px;">
+                                    <div class="text-center text-white">
+                                        <i class="fab fa-windows" style="font-size: 8rem; margin-bottom: 20px;"></i>
+                                        <h2>Windows</h2>
+                                        <p class="lead">Productividad sin límites</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 400px; background: linear-gradient(135deg, #007AFF, #5856D6); border-radius: 15px;">
+                                    <div class="text-center text-white">
+                                        <i class="fab fa-apple" style="font-size: 8rem; margin-bottom: 20px;"></i>
+                                        <h2>macOS</h2>
+                                        <p class="lead">Elegancia y rendimiento</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#osCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#osCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarta fila: Cards de sistemas operativos -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="os-card" data-bs-toggle="modal" data-bs-target="#osModal" 
+                     data-os="Ubuntu" data-icon="fab fa-ubuntu" data-class="ubuntu">
+                    <div class="text-center">
+                        <div class="os-placeholder ubuntu">
+                            <i class="fab fa-ubuntu"></i>
+                        </div>
+                        <h5>Ubuntu</h5>
+                        <p>Descubre su potencial hoy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="os-card" data-bs-toggle="modal" data-bs-target="#osModal" 
+                     data-os="Windows 11" data-icon="fab fa-windows" data-class="windows">
+                    <div class="text-center">
+                        <div class="os-placeholder windows">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <h5>Windows 11</h5>
+                        <p>Descubre su potencial hoy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="os-card" data-bs-toggle="modal" data-bs-target="#osModal" 
+                     data-os="macOS Sonoma" data-icon="fab fa-apple" data-class="macos" href="https://apps.apple.com/us/app/macos-sonoma/id6450717509?mt=12">
+                    <div class="text-center">
+                        <div class="os-placeholder macos">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h5>macOS Sonoma</h5>
+                        <p>Descubre su potencial hoy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="os-card" data-bs-toggle="modal" data-bs-target="#osModal" 
+                     data-os="Fedora" data-icon="fab fa-fedora" data-class="fedora">
+                    <div class="text-center">
+                        <div class="os-placeholder fedora">
+                            <i class="fab fa-fedora"></i>
+                        </div>
+                        <h5>Fedora</h5>
+                        <p>Descubre su potencial hoy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="os-card" data-bs-toggle="modal" data-bs-target="#osModal" 
+                     data-os="Pop!_OS" data-icon="fas fa-rocket" data-class="popos">
+                    <div class="text-center">
+                        <div class="os-placeholder popos">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h5>Pop!_OS</h5>
+                        <p>Descubre su potencial hoy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="os-card" data-bs-toggle="modal" data-bs-target="#osModal" 
+                     data-os="Zorin OS" data-icon="fas fa-gem" data-class="zorin">
+                    <div class="text-center">
+                        <div class="os-placeholder zorin">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h5>Zorin OS</h5>
+                        <p>Descubre su potencial hoy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="row">
+            <div class="col-12">
+                <footer class="footer-section">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="footer-item">
+                                <i class="fas fa-phone"></i>
+                                <span>Soporte: +569 8888 8888</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-item">
+                                <i class="fab fa-x"></i>
+                                <a href="#">@CentroOS</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-item">
+                                <i class="fab fa-github"></i>
+                                <a target="_blank" href="https://github.com/Dn-este">GitHub: Dn-este</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para sistemas operativos -->
+    <div class="modal fade" id="osModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Sistema Operativo </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalIcon" class="os-placeholder mb-4 mx-auto" style="transform: scale(1.3);">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <p class="motivational-text">¡Instálalo y potencia tu equipo como nunca antes!</p>
+                    <p class="text-muted mt-3">Descubre todas las características increíbles que este sistema operativo tiene para ofrecerte.</p>
+                    <a id="downloadButton" href="#" target="_blank" class="btn btn-primary mt-3">
+                    <i class="fas fa-download me-2"></i>Descargar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Newsletter -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Suscríbete al Newsletter</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+        <p class="mb-3">Recibe las últimas novedades sobre sistemas operativos en tu correo.</p>
+        <form id="newsletterForm">
+            <div class="mb-3">
+            <input type="email" class="form-control" id="newsletterEmail" placeholder="Correo electrónico" required>
+            <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+            </div>
+            <button type="submit" class="btn btn-success w-100">
+            <i class="fas fa-paper-plane me-2"></i>Suscribirse
+            </button>
+        </form>
+        <div id="newsletterSuccess" class="alert alert-success mt-3 d-none" role="alert">
+            ¡Gracias por suscribirte!
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para manejar el modal dinámico
+        document.addEventListener('DOMContentLoaded', function() {
+    const osModal = document.getElementById('osModal');
+    
+    osModal.addEventListener('show.bs.modal', function(event) {
+        const button = event.relatedTarget;
+        const osName = button.getAttribute('data-os');
+        const osIcon = button.getAttribute('data-icon');
+        const osClass = button.getAttribute('data-class');
+
+        const modalTitle = osModal.querySelector('#modalTitle');
+        const modalIcon = osModal.querySelector('#modalIcon');
+        const modalIconElement = modalIcon.querySelector('i');
+        const downloadButton = osModal.querySelector('#downloadButton');
+
+        // Asignar contenido dinámico
+        modalTitle.textContent = osName;
+        modalIcon.className = `os-placeholder ${osClass} mb-4 mx-auto`;
+        modalIconElement.className = osIcon;
+
+        // Asignar enlace según sistema operativo
+        const osLinks = {
+            "Ubuntu": "https://ubuntu.com/download",
+            "Windows 11": "https://www.microsoft.com/es-es/software-download/windows11",
+            "macOS Sonoma": "https://support.apple.com/macos/sonoma",
+            "Fedora": "https://getfedora.org/",
+            "Pop!_OS": "https://pop.system76.com/",
+            "Zorin OS": "https://zorin.com/os/download/"
+        };
+
+        downloadButton.href = osLinks[osName] || "#";
+    });
+
+    // Carrusel con intervalo
+    new bootstrap.Carousel(document.getElementById('osCarousel'), {
+        interval: 3000,
+        wrap: true
+    });
+});
+    // Newsletter form validation
+    document.addEventListener('DOMContentLoaded', function() {
+        const newsletterForm = document.getElementById('newsletterForm');
+        const emailInput = document.getElementById('newsletterEmail');
+        const successMessage = document.getElementById('newsletterSuccess');
+
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailInput.classList.add('is-invalid');
+            } else {
+                emailInput.classList.remove('is-invalid');
+                successMessage.classList.remove('d-none');
+                newsletterForm.classList.add('d-none');
+                // Aquí puedes agregar una llamada a backend o guardar el correo si deseas.
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
